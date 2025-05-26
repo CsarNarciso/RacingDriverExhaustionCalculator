@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<title>Exhaustion Calculator</title>
+
+	</head>
+
+    <body>
+        
+        <h1>Formula values</h1>
+
+        <label for="value">Value: </label><br>
+        <input type="number" id="value" value="5" autocomplete="off"><br>
+
+        <label for="seconds">Seconds: </label><br>
+        <input type="number" id="seconds" value="3.5" autocomplete="off"><br>
+
+        <label for="gForce">G Force: </label><br>
+        <input type="number" id="gForce" value="15" autocomplete="off"><br>
+
+        <label for="gForceRate">G Force rate: </label><br>
+        <input type="number" id="gForceRate" value="5" autocomplete="off"><br>
+
+        <label for="exhaustion">Exhaustion: </label><br>
+        <input type="number" id="exhaustion" value="100" autocomplete="off">
+
+
+        <h1>Custom values</h1>
+
+        <label for="customValue">Custom value: </label><br>
+        <input type="number" id="customValue" value="5" autocomplete="off"><br>
+
+        <label for="customGForce">Custom G Force: </label><br>
+        <input type="number" id="customGForce" value="15" autocomplete="off"><br>
+
+        <label for="customExhaustion">Custom exhaustion: </label><br>
+        <input type="number" id="customExhaustion" value="100" autocomplete="off">
+
+
+        <br>
+        <button id="calculateBtn" style="cursor: pointer; border: 1px solid black; background-color: green; color: white;">Calculate</button>
+        
+
+        <label for="result">Result: </label> 
+        <div id="result"></div>
+    
+		<script src="script.js"></script>
+    </body>
+</html>
