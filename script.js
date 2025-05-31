@@ -1,68 +1,102 @@
 console.log("Started");
 
-//formula based values
-let value = Number(document.getElementById('value').value);
-let seconds = Number(document.getElementById('seconds').value);
-let gForce = Number(document.getElementById('gForce').value);
-let gForceRate = Number(document.getElementById('gForceRate').value);
-let exhaustion = Number(document.getElementById('exhaustion').value);
-
 function valueOnInput(value) {
-	this.value = value;
+	document.getElementById('valueSlider').value = value;
+	calculate();
+}
+function valueOnInputSlider(value) {
+	document.getElementById('value').value = value;
 	calculate();
 }
 
 function secondsOnInput(value) {
-	seconds = value;
+	document.getElementById('secondsSlider').value = value;
+	calculate();
+}
+function secondsOnInputSlider(value) {
+	document.getElementById('seconds').value = value;
 	calculate();
 }
 
 function gForceOnInput(value) {
-	gForce = value;
+	document.getElementById('gForceSlider').value = value;
+	calculate();
+}
+function gForceOnInputSlider(value) {
+	document.getElementById('gForce').value = value;
 	calculate();
 }
 
 function gForceRateOnInput(value) {
-	gForceRate = value;
+	document.getElementById('gForceRateSlider').value = value;
+	calculate();
+}
+function gForceRateOnInputSlider(value) {
+	document.getElementById('gForceRate').value = value;
 	calculate();
 }
 
 function exhaustionOnInput(value) {
-	exhaustion = value;
+	document.getElementById('exhaustionSlider').value = value;
+	calculate();
+}
+function exhaustionOnInputSlider(value) {
+	document.getElementById('exhaustion').value = value;
 	calculate();
 }
 
 
-//custom values
-let customValue = Number(document.getElementById('customValue').value);
-let customGForce = Number(document.getElementById('customGForce').value);
-let customExhaustion = Number(document.getElementById('customExhaustion').value);  
 
 function customValueOnInput(value) {
-	customValue = value;
+	document.getElementById('customValueSlider').value = value;
+	calculate();
+}
+function customValueOnInputSlider(value) {
+	document.getElementById('customValue').value = value;
 	calculate();
 }
 
 function customGForceOnInput(value) {
-	customGForce = value;
+	document.getElementById('customGForceSlider').value = value;
+	calculate();
+}
+function customGForceOnInputSlider(value) {
+	document.getElementById('customGForce').value = value;
 	calculate();
 }
 
 function customExhaustionOnInput(value) {
-	customExhaustion = value;
+	document.getElementById('customExhaustionSlider').value = value;
+	calculate();
+}
+function customExhaustionOnInputSlider(value) {
+	document.getElementById('customExhaustion').value = value;
 	calculate();
 }
 
 
-
 function calculate() {
+    	
+	//formula based values
+	var value = Number(document.getElementById('value').value);
+	var seconds = Number(document.getElementById('seconds').value);
+	var gForce = Number(document.getElementById('gForce').value);
+	var gForceRate = Number(document.getElementById('gForceRate').value);
+	var exhaustion = Number(document.getElementById('exhaustion').value);
 
-    //format (round) and calculate
-    let formula = customValue/(value/seconds*1/exhaustion)*((customGForce+gForceRate)/(gForce+gForceRate))/customExhaustion;
+	//custom values
+	var customValue = Number(document.getElementById('customValue').value);
+	var customGForce = Number(document.getElementById('customGForce').value);
+	var customExhaustion = Number(document.getElementById('customExhaustion').value);  
+
+
+	//format (round) and calculate
+	let baseRateFormula = (value/seconds/exhaustion);
+    let formula = customValue / baseRateFormula * ((customGForce + gForceRate) / (gForce + gForceRate)) / customExhaustion;
     const result = Number(formula.toFixed(10)); 
-
+	
     // and display
-    document.getElementById('result').textContent = `${result} seconds to reach ${customValue} under ${customGForce} Gs and ${customExhaustion} exhaustion`;
+    document.getElementById('result').textContent = `${result} seconds to reach ${customValue} under ${customGForce} Gs and ${customExhaustion} exhaustion: ${baseRateFormula}`;
 }
 
 
