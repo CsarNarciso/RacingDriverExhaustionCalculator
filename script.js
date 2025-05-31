@@ -45,6 +45,15 @@ function exhaustionOnInputSlider(value) {
 	calculate();
 }
 
+function exhaustionRateOnInput(value) {
+	document.getElementById('exhaustionRateSlider').value = value;
+	calculate();
+}
+function exhaustionRateOnInputSlider(value) {
+	document.getElementById('exhaustionRate').value = value;
+	calculate();
+}
+
 
 
 function customValueOnInput(value) {
@@ -83,6 +92,7 @@ function calculate() {
 	var gForce = Number(document.getElementById('gForce').value);
 	var gForceRate = Number(document.getElementById('gForceRate').value);
 	var exhaustion = Number(document.getElementById('exhaustion').value);
+	var exhaustionRate = Number(document.getElementById('exhaustionRate').value);
 
 	//custom values
 	var customValue = Number(document.getElementById('customValue').value);
@@ -91,8 +101,8 @@ function calculate() {
 
 
 	//format (round) and calculate
-	let baseRateFormula = (value/seconds/exhaustion);
-    let formula = customValue / baseRateFormula * ((customGForce + gForceRate) / (gForce + gForceRate)) / customExhaustion;
+	let baseRateFormula = (value/seconds) * ((customGForce + gForceRate) / (gForce + gForceRate)) / ((customExhaustion + exhaustionRate) / (exhaustion + exhaustionRate));
+    let formula = customValue / baseRateFormula;
     const result = Number(formula.toFixed(10)); 
 	
     // and display
