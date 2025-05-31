@@ -15,7 +15,7 @@ document.getElementById('calculateBtn').onclick = function(){
     let customExhaustion = Number(document.getElementById('customExhaustion').value);  
 
     //format (round) and calculate
-    let formula = customValue/(value/seconds*1*exhaustion)*((customGForce+gForceRate)/(gForce+gForceRate))*customExhaustion;
+    let formula = customValue/(value/seconds*1/exhaustion)*((customGForce+gForceRate)/(gForce+gForceRate))/customExhaustion;
     const result = Number(formula.toFixed(10)); 
 
     // and display
