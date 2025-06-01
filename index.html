@@ -21,20 +21,21 @@
 		<input type="range" id="secondsSlider" min="0" max="100" value="3.5" oninput="secondsOnInputSlider(this.value)"><br>
 
         <label for="gForce">G Force: </label><br>
-        <input type="number" id="gForce" value="15" autocomplete="off" oninput="gForceOnInput(this.value)">
-		<input type="range" id="gForceSlider" min="0" max="100" value="15" oninput="gForceOnInputSlider(this.value)"><br>
+        <input type="number" id="gForce" value="25" autocomplete="off" oninput="gForceOnInput(this.value)">
+		<input type="range" id="gForceSlider" min="0" max="100" value="25" oninput="gForceOnInputSlider(this.value)"><br>
 
         <label for="gForceRate">G Force rate: </label><br>
-        <input type="number" id="gForceRate" value="20" autocomplete="off" oninput="gForceRateOnInput(this.value)">
-		<input type="range" id="gForceRateSlider" min="0" max="100" value="20" oninput="gForceRateOnInputSlider(this.value)"><br>
+		<input type="number" id="gForceRate" value="0.04" step="0.001" autocomplete="off" oninput="gForceRateOnInput(this.value)">
+		<input type="range" id="gForceRateSlider" min="0.01" max="0.1" value="0.04" step="0.001" oninput="gForceRateOnInputSlider(this.value)"><br>
+
 
         <label for="exhaustion">Exhaustion: </label><br>
         <input type="number" id="exhaustion" value="100" autocomplete="off" oninput="exhaustionOnInput(this.value)">
 		<input type="range" id="exhaustionSlider" min="0" max="100" value="100" oninput="exhaustionOnInputSlider(this.value)"><br>
 
 		<label for="exhaustionRate">Exhaustion rate: </label><br>
-        <input type="number" id="exhaustionRate" value="20" autocomplete="off" oninput="exhaustionRateOnInput(this.value)">
-		<input type="range" id="exhaustionRateSlider" min="0" max="100" value="20" oninput="exhaustionRateOnInputSlider(this.value)">
+        <input type="number" id="exhaustionRate" value="0.04" step="0.001" autocomplete="off" oninput="exhaustionRateOnInput(this.value)">
+		<input type="range" id="exhaustionRateSlider" min="0.01" max="0.1" value="0.04" step="0.001" oninput="exhaustionRateOnInputSlider(this.value)">
 
 
         <h1>Custom values</h1>
@@ -44,8 +45,8 @@
 		<input type="range" id="customValueSlider" min="0" max="100" value="5" oninput="customValueOnInputSlider(this.value)"><br>
 
         <label for="customGForce">Custom G Force: </label><br>
-        <input type="number" id="customGForce" value="15" autocomplete="off" oninput="customGForceOnInput(this.value)">
-		<input type="range" id="customGForceSlider" min="0" max="100" value="15" oninput="customGForceOnInputSlider(this.value)"><br>
+        <input type="number" id="customGForce" value="25" autocomplete="off" oninput="customGForceOnInput(this.value)">
+		<input type="range" id="customGForceSlider" min="0" max="100" value="25" oninput="customGForceOnInputSlider(this.value)"><br>
 
         <label for="customExhaustion">Custom exhaustion: </label><br>
         <input type="number" id="customExhaustion" value="100" autocomplete="off" oninput="customExhaustionOnInput(this.value)">

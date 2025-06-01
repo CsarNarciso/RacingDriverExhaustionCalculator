@@ -84,8 +84,8 @@ function customExhaustionOnInputSlider(value) {
 }
 
 
-function calculate() {
-    	
+function calculate() {  	
+		
 	//formula based values
 	var value = Number(document.getElementById('value').value);
 	var seconds = Number(document.getElementById('seconds').value);
@@ -99,10 +99,9 @@ function calculate() {
 	var customGForce = Number(document.getElementById('customGForce').value);
 	var customExhaustion = Number(document.getElementById('customExhaustion').value);  
 
-
 	//format (round) and calculate
-	let baseRateFormula = (value/seconds) * ((customGForce + gForceRate) / (gForce + gForceRate)) / ((customExhaustion + exhaustionRate) / (exhaustion + exhaustionRate));
-    let formula = customValue / baseRateFormula;
+	let baseRateFormula = (value/seconds);
+    let formula = customValue / baseRateFormula * (1/Math.exp(-gForceRate*(gForce-customGForce))) / (1/Math.exp(-exhaustionRate*(exhaustion-customExhaustion)));;
     const result = Number(formula.toFixed(10)); 
 	
     // and display
